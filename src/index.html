@@ -5,13 +5,52 @@
     <title>Memory Match</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body> 
+    <img id="backimage" src="./back.jpg">
+    <h1>Rick And Morty Universe</h1>
+    <h2>Memory Game</h2>
+    <!--Página de inicio-->
+  <section id="start">
+    <img class="easy" src="./buttonimg.png">
+    <img class="medium" src="./buttonimg.png">
+    <img class="hard" src="./buttonimg.png">
+    <button class="levelEasy">FÁCIL</button>
+    <button class="levelMedium">MEDIO</button>
+    <button class="levelHard">DIFÍCIL</button> 
+    <button class="help">AYUDA</button> 
+    
+    <!--<div class="flex-container">
+    <figure id="title">
+      <img src="./title.png">
+    </figure>
+  </div>-->
 
-    <div>Hola Mundo</div>
+  </section> 
 
-    <div>bienvenido</div>
+  <!--Página de instrucciones-->
+  <section id=instructions>
+<img id="detail" src="./imginstructions.png">
+<button class="backStart">VOLVER</button>
+  </section>
+   
+  <!--Página del nivel fácil-->
+  <section id=easyLevel>
+  </section>
 
-    <div id="root"></div>
+  <!--Página del nivel medio-->
+  <section id=mediumLevel>
+  </section>
+
+  <!--Página del nivel difícil-->
+  <section id=hardLevel>
+  </section>
+
+  <!--Página final-->
+  <section id=end>
+    <button class="restart">INICIO</button>
+  </section>
+
+  <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
 </html>

@@ -1,0 +1,121 @@
+/* fondo 1 */
+#backimage {
+position: absolute;
+width: 1440px;
+height: 954px;
+left: 0px;
+top: 0px;
+}
+#start{
+    display: block;
+}
+#instructions{
+    display: none;
+}
+#easyLevel {
+    display: none;
+}
+#mediumLevel {
+    display: none;
+}
+#hardLevel {
+    display: none;
+}
+#end {
+    display: none;
+}
+
+/*.flex-container {
+display: flex;
+align-items: flex-start;
+}
+/* Título */
+/*#title{
+position: absolute;
+width: 1392px;
+height: 207px;
+left: 24px;
+top: 0px;
+
+}
+*/
+
+h1{
+position: absolute;
+width: 1313px;
+height: 142px;
+left: 64px;
+top: 38px;
+
+font-family: Ribeye;
+font-style: normal;
+font-weight: normal;
+font-size: 96px;
+line-height: 131px;
+text-align: center;
+
+color: #FDF7F7;
+}
+
+h2{
+    position: absolute;
+width: 362px;
+height: 66px;
+left: 43px;
+top: 14px;
+
+font-family: Ribeye;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 66px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FAF76B;
+
+}
+/* imágenes de cartas para elegir nivel */
+img{
+    position: relative;
+    width: 210px;
+    height: 260px; 
+    background: rgba(217, 195, 238, 0.75);
+    border-radius: 10px;
+}
+.easy{
+    left: 200px;
+ top: 394px;
+}
+.medium{
+    left: 400px;
+top: 394px;
+
+}
+.hard{
+    left: 600px;
+top: 394px;
+}
+
+/* Botones para todo el juego */
+button {
+position: relative;
+width: 195px;
+height: 62px;
+
+background: rgba(217, 195, 238, 0.75);
+border-radius: 20px;
+}
+
+
+#detail{
+    position: relative;
+width: 1211px;
+height: 614px;
+left: 115px;
+top: 180px;
+
+border-radius: 20px;
+}
+
