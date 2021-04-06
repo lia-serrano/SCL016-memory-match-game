@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Memory Match</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body> 
-    <img id="backimage" src="./back.jpg">
-    <h1>Rick And Morty Universe</h1>
-    <h2>Memory Game</h2>
-    <!--Página de inicio-->
-  <section id="start">
-    <img class="easy" src="./buttonimg.png">
-    <img class="medium" src="./buttonimg.png">
-    <img class="hard" src="./buttonimg.png">
-    <button class="levelEasy">FÁCIL</button>
-    <button class="levelMedium">MEDIO</button>
-    <button class="levelHard">DIFÍCIL</button> 
-    <button class="help">AYUDA</button> 
-    
-    <!--<div class="flex-container">
+
+<head>
+  <meta charset="utf-8">
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <img id="backimage" src="./back.jpg">
+  <h1>Rick And Morty Universe</h1>
+  <h2>Memory Game</h2>
+  <!--Página de inicio-->
+  
+  <section  class="container">
+      <button class="levelEasy">FÁCIL</button>
+      <button class="levelMedium">MEDIO</button>
+      <button class="levelHard">DIFÍCIL</button>
+  </section>
+  <button class="help">AYUDA</button>
+
+</body>
+<!--<div class="flex-container">
     <figure id="title">
       <img src="./title.png">
     </figure>
   </div>-->
 
-  </section> 
+</section>
 
-  <!--Página de instrucciones-->
-  <section id=instructions>
-<img id="detail" src="./imginstructions.png">
-<button class="backStart">VOLVER</button>
-  </section>
-   
-  <!--Página del nivel fácil-->
-  <section id=easyLevel>
-  </section>
+<!--Página de instrucciones-->
+<section id=instructions>
+  <img id="detail" src="./imginstructions.png">
+  <button class="backStart">VOLVER</button>
+</section>
 
-  <!--Página del nivel medio-->
-  <section id=mediumLevel>
-  </section>
+<!--Página del nivel fácil-->
+<section id=easyLevel>
+</section>
 
-  <!--Página del nivel difícil-->
-  <section id=hardLevel>
-  </section>
+<!--Página del nivel medio-->
+<section id=mediumLevel>
+</section>
 
-  <!--Página final-->
-  <section id=end>
-    <button class="restart">INICIO</button>
-  </section>
+<!--Página del nivel difícil-->
+<section id=hardLevel>
+</section>
 
-  <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+<!--Página final-->
+<section id=end>
+  <button class="restart">INICIO</button>
+</section>
+
+<div id="root"></div>
+<script src="main.js" type="module"></script>
+</body>
+
 </html>
- 
