@@ -1,8 +1,8 @@
 export default {
-    name: 'rickAndMorty',
+    name: 'rym',
     items: [
-      { id: 'meeseeks', image: '' , bgColor: 'D9C3EE' }, 
-      { id: 'scary', image: '../image/scary.png', bgColor: 'D9C3EE' },
+      { id: 'meeseeks', image: '../../img/meeseeks.png' , bgColor: 'D9C3EE' }, 
+      { id: 'scary', image: '', bgColor: 'D9C3EE' },
       { id: 'spaceship', image: '', bgColor: 'D9C3EE' },
       { id: 'vortex', image: '', bgColor: 'D9C3EE' },
 
