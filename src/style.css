@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
 /* fondo 1 */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
 body, html{
     height: 100%;
     width: 100%;
@@ -141,3 +147,55 @@ border-radius: 20px;
     left: 20%;
 }
 
+.grid {
+    max-width: 700px;
+    margin: 20% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+     position: relative;
+     margin: 5px;
+     background-color: #D9C3EE;
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center center;
+     transition: all 0.4s linear;
+     transform-style: preserve-3d;
+}
+
+.card,.front,.back{
+    height: 200px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.back, .front {
+    position: absolute;
+    backface-visibility: hidden;
+}
+.back {
+    background-color: #D9C3EE;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.front {
+    transform: rotateY(180deg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.selected {
+    transform: rotateY(180deg);
+}
+
+.match {
+    border: 4px;
+    opacity: 0;
+    background-image: none !important;
+}
