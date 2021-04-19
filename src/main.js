@@ -1,8 +1,8 @@
 import {picture} from "./components/Cards.js";
-/*import Cards from './components/Cards';
-/console.log(Cards)
+// import Cards from './components/Cards';
+// console.log(Cards)
 import rick from './data/rym/rick.js'
-console.log(rick.items);*/
+console.log(rick.items);
 //document.getElementById('root').appendChild(App());//
 
 window.onload = function (){
@@ -19,7 +19,7 @@ easyPage.addEventListener('click',show)
 function show(){
     document.querySelector('#start').style.display = 'none'
     document.querySelector('#instructions').style.display = 'none'
-    document.querySelector('#easylevel').style.display = 'block'
+    document.querySelector('#easyLevel').style.display = 'block'
     document.querySelector('#mediumLevel').style.display = 'none'
     document.querySelector('#hardLevel').style.display = 'none'
     document.querySelector('#end').style.display = 'none'
@@ -45,8 +45,11 @@ function backhome(){
     document.querySelector('#end').style.display = 'none'
 }
 picture();
+
+let dataRick = rick.items;
 //duplicar el array de cartas para crear una pareja//
-const gameGrid = picture.concat(picture)
+const gameGrid =dataRick.concat(dataRick);
+console.log(gameGrid);
 
 //se declaran variables para aleatorizar cartas//
 //empieza en la primera carta el ciclo//
@@ -90,13 +93,14 @@ let newGrid = shuffle (gameGrid)
 
 //se agregan las cartas con un div a la nueva section//
 newGrid.forEach((item) => {
+    console.log(item);
     const card = document.createElement('div')
     card.classList.add('card')
-    card.dataset.name = item.name
+    card.dataset.name = item.id
     //creando un nuevo div para ocultar las cartas//
     const front = document.createElement('div')
     front.classList.add('front')
-    front.style.backgroundImage = `url(${item.img})`
+    front.style.backgroundImage = `url(${item.image})`
     const back = document.createElement('div')
     back.classList.add('back')
 
