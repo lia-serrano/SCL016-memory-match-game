@@ -8,42 +8,49 @@
 </head>
 
 <body>
-  <img id="backimage" src="./back.png">
-  <h1>Rick And Morty Universe</h1>
-  <h2>Memory Game</h2>
 
-  <!--Página de inicio-->
-  <section id="start" class="container">
-    <button class="levelEasy">FÁCIL</button>
-    <button class="levelMedium">MEDIO</button>
-    <button class="levelHard">DIFÍCIL</button>
-    <button class="help">AYUDA</button>
-  </section>
+  <div id="backimage">
+    <header>
+      <h2>Memory Game</h2>
+      <h1>Rick And Morty Universe</h1>
+    </header>
 
-  <!--Página de instrucciones-->
-  <section id=instructions>
-    <img id="detail" src="./imginstructions.png">
-    <button class="backStart">VOLVER</button>
-  </section>
+    <!--Página de inicio-->
+    <section id="start" class="container">
+      <div>
+        <button class="levelEasy">FÁCIL</button>
+        <button class="levelMedium">MEDIO</button>
+        <button class="levelHard">DIFÍCIL</button>
+      </div>
+      <div>
+        <button class="help">AYUDA</button>
+      </div>
+    </section>
+    <!--Página de instrucciones-->
+    <section id=instructions>
+      <img id="detail" src="./imginstructions.png">
+      <button class="backStart">VOLVER</button>
+    </section>
 
-  <!--Página del nivel fácil-->
-  <section id=easyLevel>
-  </section>
+    <!--Página del nivel fácil-->
+    <section id=easyLevel>
+    </section>
 
-  <!--Página del nivel medio-->
-  <section id=mediumLevel>
-  </section>
+    <!--Página del nivel medio-->
+    <section id=mediumLevel>
+    </section>
 
-  <!--Página del nivel difícil-->
-  <section id=hardLevel>
-  </section>
+    <!--Página del nivel difícil-->
+    <section id=hardLevel>
+    </section>
 
-  <!--Página final-->
-  <section id=end>
-    <button class="restart">INICIO</button>
-  </section>
+    <!--Página final-->
+    <section id=end>
+      <button class="restart">INICIO</button>
+    </section>
 
-  <div id="root"></div>
+    <div id="root"></div>
+     </div>
   <script src="main.js" type="module"></script>
 </body>
 

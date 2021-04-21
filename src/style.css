@@ -5,52 +5,43 @@
 *::after{
     box-sizing: border-box;
 }
-
-body, html{
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+html {
+    font-size: 62.5%;
+  }
+  
+/*body, html{
     height: 100%;
     width: 100%;
     margin: 0px;
-}
+}*/
 #backimage {
-    position: absolute;
 background-image: url('./back.png');
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
 background-size: cover;
-height: 100%;
-width: 100%;
-text-align: center;
+width: 100vw;
+height: 100vh;
+background-repeat: no-repeat;
+background-position: center center;
 }
 
-#start{
+/*#start{
     display: block;
-}
+}*/
 
-#instructions{
+#instructions,#easyLevel,#mediumLevel,#hardLevel,#end{
     display: none;
 }
-#easyLevel {
-    display: none;
-}
-#mediumLevel {
-    display: none;
-}
-#hardLevel {
-    display: none;
-}
-#end {
-    display: none;
-}
-
 .container {
-    position: relative;
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: space-evenly;
-    align-items: flex-end;
+    align-items: center;
+    height: 85vh;
 }
 .help{
     display: flex;
@@ -59,34 +50,23 @@ text-align: center;
     align-items: center;
 }
 
+header{
+    text-align: center;
+}
 h1{
-position: absolute;
-width: 1313px;
-height: 142px;
-left: 64px;
-top: 38px;
-
 font-family: 'Ultra', serif;
 font-style: normal;
 font-weight: normal;
-font-size: 60px;
-line-height: 131px;
+font-size: 4.0rem;
 
 color: #FDF7F7;
 }
 
 h2{
-    position: absolute;
-width: 362px;
-height: 66px;
-left: 43px;
-top: 14px;
-
 font-family: 'Ultra', serif;
 font-style: normal;
 font-weight: normal;
-font-size: 30px;
-line-height: 66px;
+font-size: 2.0rem;
 /* identical to box height */
 
 text-align: center;
@@ -94,27 +74,6 @@ text-align: center;
 color: #FAF76B;
 
 }
-/* imágenes de cartas para elegir nivel */
-/*img{
-    position: relative;
-    width: 210px;
-    height: 260px; 
-    background: rgba(217, 195, 238, 0.75);
-    border-radius: 10px;
-}
-.easy{
-    left: 200px;
- top: 394px;
-}
-.medium{
-    left: 400px;
-top: 394px;
-
-}
-.hard{
-    left: 600px;
-top: 394px;
-}*/
 
 /* Botones para todo el juego */
 button {
