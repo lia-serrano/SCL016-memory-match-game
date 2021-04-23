@@ -2,7 +2,6 @@ import {picture} from "./components/Cards.js";
 // import Cards from './components/Cards';
 // console.log(Cards)
 import rick from './data/rym/rick.js'
-console.log(rick.items);
 //document.getElementById('root').appendChild(App())
 
 window.onload = function (){
@@ -49,11 +48,8 @@ picture();
 let dataRick = rick.items;
 //duplicar el array de cartas para crear una pareja//
 const gameGrid =dataRick.concat(dataRick);
-console.log(gameGrid);
 
 //se declaran variables para aleatorizar cartas//
-//empieza en la primera carta el ciclo//
-let i = 0
 //crea una posicion aleatoria a las cartas//
 let j = 0
 //posicion aleatoria en que aparece la carta//
@@ -69,10 +65,11 @@ function shuffle (gameGrid) {
     gameGrid[j] = temp
     }
 return gameGrid;    
-};
+}
 //se declaran valiables del juego//
 //variable para los intentos del juego//
 let count = 0
+let score = 0
 //variable del primer y segundo intento//
 let firstGuess = ''
 let secondGuess = ''
@@ -93,7 +90,6 @@ let newGrid = shuffle (gameGrid)
 
 //se agregan las cartas con un div a la nueva section//
 newGrid.forEach((item) => {
-    console.log(item);
     const card = document.createElement('div')
     card.classList.add('card')
     card.dataset.name = item.id
@@ -109,6 +105,16 @@ newGrid.forEach((item) => {
     card.appendChild(front)
     card.appendChild(back)
 });
+
+const end = document.getElementById('end')
+const modal = document.createElement('section')
+modal.setAttribute('class', 'modal')
+end.appendChild(modal)
+
+const message = document.createElement('p')
+const winner = document.createTextNode('¡Felicitaciones, ganaste 🎉')
+message.appendChild(winner)
+modal.appendChild(message)
 
     //agregar el match al CSS
     const match = () => {
@@ -144,7 +150,7 @@ grid.addEventListener('click', function (event) {
         else {
             secondGuess = clicked.parentNode.dataset.name;
             clicked.parentNode.classList.add('selected')
-        };
+        }
     //si ambos intentos no estan vacios
         if (firstGuess !== '' && secondGuess !== ''){
             //y el primer intento coincide con el segundo
@@ -152,14 +158,20 @@ grid.addEventListener('click', function (event) {
                 //se aplica la función match
                 setTimeout(match, delay);
                 setTimeout(resetGuesses, delay);
+                score++     
                 }
                 //si no coinciden las cartas se resetea el conteo
                 else {
                     setTimeout(resetGuesses, delay);
             }
-        };
+    if(score === 4){
+        end.style.display = "block"
+    return;}
+        }
      //establece el intento previo como clickeado 
      previousTarget = clicked;
     }
 });
+
+
 
