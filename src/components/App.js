@@ -19,7 +19,6 @@ const App = () => {
 
   el.className = 'App';
   el.textContent = 'Hola mundo!';
-console.log(Cards)
   return el;
 };
 

@@ -1,11 +1,10 @@
-import {picture} from "./components/Cards.js";
+import { picture } from "./components/Cards.js";
 // import Cards from './components/Cards';
 // console.log(Cards)
 import rick from './data/rym/rick.js'
-console.log(rick.items);
 //document.getElementById('root').appendChild(App())
 
-window.onload = function (){
+window.onload = function () {
     document.querySelector('#start').style.display = 'flex'
     document.querySelector('#instructions').style.display = 'none'
     document.querySelector('#easyLevel').style.display = 'none'
@@ -15,8 +14,8 @@ window.onload = function (){
 }
 
 let easyPage = document.querySelector(".levelEasy")
-easyPage.addEventListener('click',show)
-function show(){
+easyPage.addEventListener('click', show)
+function show() {
     document.querySelector('#start').style.display = 'none'
     document.querySelector('#instructions').style.display = 'none'
     document.querySelector('#easyLevel').style.display = 'flex'
@@ -25,8 +24,8 @@ function show(){
     document.querySelector('#end').style.display = 'none'
 }
 let directions = document.querySelector(".help")
-directions.addEventListener('click',show2)
-function show2(){
+directions.addEventListener('click', show2)
+function show2() {
     document.querySelector('#start').style.display = 'none'
     document.querySelector('#instructions').style.display = 'flex'
     document.querySelector('#easylevel').style.display = 'none'
@@ -35,8 +34,8 @@ function show2(){
     document.querySelector('#end').style.display = 'none'
 }
 let back = document.querySelector(".backStart")
-back.addEventListener('click',backhome)
-function backhome(){
+back.addEventListener('click', backhome)
+function backhome() {
     document.querySelector('#start').style.display = 'flex'
     document.querySelector('#instructions').style.display = 'none'
     document.querySelector('#easyLevel').style.display = 'none'
@@ -48,31 +47,28 @@ picture();
 
 let dataRick = rick.items;
 //duplicar el array de cartas para crear una pareja//
-const gameGrid =dataRick.concat(dataRick);
-//console.log(gameGrid);
+const gameGrid = dataRick.concat(dataRick);
 
 //se declaran variables para aleatorizar cartas//
-//empieza en la primera carta el ciclo//
-let i = 0
 //crea una posicion aleatoria a las cartas//
 let j = 0
 //posicion aleatoria en que aparece la carta//
-let temp = null 
+let temp = null
 
 //algoritmo de fisher-yates para aleatorizar las cartas//
-function shuffle (gameGrid) {
-    for (let i = gameGrid.length - 1; i > 0; i -= 1)
-    {
-    j = Math.floor(Math.random() * (i + 1))
-    temp = gameGrid[i]
-    gameGrid[i] = gameGrid[j]
-    gameGrid[j] = temp
+function shuffle(gameGrid) {
+    for (let i = gameGrid.length - 1; i > 0; i -= 1) {
+        j = Math.floor(Math.random() * (i + 1))
+        temp = gameGrid[i]
+        gameGrid[i] = gameGrid[j]
+        gameGrid[j] = temp
     }
-return gameGrid;    
+    return gameGrid;
 }
 //se declaran valiables del juego//
 //variable para los intentos del juego//
 let count = 0
+let score = 0
 //variable del primer y segundo intento//
 let firstGuess = ''
 let secondGuess = ''
@@ -89,11 +85,10 @@ grid.setAttribute('class', 'grid')
 easyLevel.appendChild(grid)
 
 //guardamos funcion shuffle en una nueva variable//
-let newGrid = shuffle (gameGrid)
+let newGrid = shuffle(gameGrid)
 
 //se agregan las cartas con un div a la nueva section//
 newGrid.forEach((item) => {
-  //  console.log(item);
     const card = document.createElement('div')
     card.classList.add('card')
     card.dataset.name = item.id
@@ -110,23 +105,33 @@ newGrid.forEach((item) => {
     card.appendChild(back)
 });
 
-    //agregar el match al CSS
-    const match = () => {
-        const selected = document.querySelectorAll('.selected')
-        selected.forEach(card => {
-            card.classList.add('match')
-        })
-    };
+const end = document.getElementById('end')
+const modal = document.createElement('section')
+modal.setAttribute('class', 'modal')
+end.appendChild(modal)
+
+const message = document.createElement('p')
+const winner = document.createTextNode('¡Felicitaciones, ganaste 🎉')
+message.appendChild(winner)
+modal.appendChild(message)
+
+//agregar el match al CSS
+const match = () => {
+    const selected = document.querySelectorAll('.selected')
+    selected.forEach(card => {
+        card.classList.add('match')
+    })
+};
 //agregar el reseteo de intentos
 const resetGuesses = () => {
     count = 0
     firstGuess = ''
     secondGuess = ''
 
-      let selected = document.querySelectorAll('.selected')
-      selected.forEach((card) => {
-          card.classList.remove('selected')
-      })
+    let selected = document.querySelectorAll('.selected')
+    selected.forEach((card) => {
+        card.classList.remove('selected')
+    })
 };
 
 //se llama a la funcion para que el usuario pueda jugar
@@ -137,29 +142,37 @@ grid.addEventListener('click', function (event) {
     }
     if (count < 2) {
         count++
-        if (count === 1){
+        if (count === 1) {
             firstGuess = clicked.parentNode.dataset.name;
             clicked.parentNode.classList.add('selected')
         }
         else {
             secondGuess = clicked.parentNode.dataset.name;
             clicked.parentNode.classList.add('selected')
-        };
-    //si ambos intentos no estan vacios
-        if (firstGuess !== '' && secondGuess !== ''){
+        }
+        //si ambos intentos no estan vacios
+        if (firstGuess !== '' && secondGuess !== '') {
             //y el primer intento coincide con el segundo
             if (firstGuess === secondGuess) {
                 //se aplica la función match
                 setTimeout(match, delay);
                 setTimeout(resetGuesses, delay);
-                }
-                //si no coinciden las cartas se resetea el conteo
-                else {
-                    setTimeout(resetGuesses, delay);
+                score++
+            }
+            //si no coinciden las cartas se resetea el conteo
+            else {
+                setTimeout(resetGuesses, delay);
+            }
+
+            if (score === 4) {
+                end.style.display = "block"
+                return;
             }
         }
-     //establece el intento previo como clickeado 
-     previousTarget = clicked;
+        //establece el intento previo como clickeado 
+        previousTarget = clicked;
     }
 });
+
+
 
