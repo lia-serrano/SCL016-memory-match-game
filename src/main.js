@@ -49,7 +49,7 @@ picture();
 let dataRick = rick.items;
 //duplicar el array de cartas para crear una pareja//
 const gameGrid =dataRick.concat(dataRick);
-console.log(gameGrid);
+//console.log(gameGrid);
 
 //se declaran variables para aleatorizar cartas//
 //empieza en la primera carta el ciclo//
@@ -69,7 +69,7 @@ function shuffle (gameGrid) {
     gameGrid[j] = temp
     }
 return gameGrid;    
-};
+}
 //se declaran valiables del juego//
 //variable para los intentos del juego//
 let count = 0
@@ -93,7 +93,7 @@ let newGrid = shuffle (gameGrid)
 
 //se agregan las cartas con un div a la nueva section//
 newGrid.forEach((item) => {
-    console.log(item);
+  //  console.log(item);
     const card = document.createElement('div')
     card.classList.add('card')
     card.dataset.name = item.id
@@ -157,7 +157,7 @@ grid.addEventListener('click', function (event) {
                 else {
                     setTimeout(resetGuesses, delay);
             }
-        };
+        }
      //establece el intento previo como clickeado 
      previousTarget = clicked;
     }
